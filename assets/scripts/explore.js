@@ -53,7 +53,11 @@ function init() {
         }
       }
       window.speechSynthesis.speak(txt);
-      img.src='assets/images/smiling-open.png';
+      
+      txt.onstart = function() {
+        img.src='assets/images/smiling-open.png';
+      }
+      
       txt.onend = function() {
         img.src = 'assets/images/smiling.png'
       }
